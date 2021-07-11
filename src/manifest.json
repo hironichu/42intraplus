@@ -2,7 +2,7 @@
     "update_url": "https://clients2.google.com/service/update2/crx",
     "name": "42 Intra plus",
     "version": "2",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "This extension adds much more to the Intranet for the schools based of 42 cursus.",
     "icons": {
         "16": "images/42intrapluslogo16.png",
@@ -10,7 +10,7 @@
         "64": "images/42intrapluslogo64.png",
         "128": "images/42intrapluslogo128.png"
     },
-    "browser_action": {
+    "action": {
         "default_icon": {
             "16": "images/42intrapluslogo16.png",
             "48": "images/42intrapluslogo48.png",
@@ -20,9 +20,9 @@
         "default_title": "42 intra plus",
         "default_popup": "popup.html"
     },
-    "web_accessible_resources": [
-        "*.css"
-    ],
+    "web_accessible_resources": [{
+		"resources": ["*.css"]
+	}],
     "background": {
         "scripts": [
             "./background/runtime.js"
@@ -74,23 +74,30 @@
     ],
     "permissions": [
         "tabs",
-        "https://ekko.pw/",
-        "https://*.intra.42.fr/",
         "webRequest",
         "notifications",
-        "https://*.intra.42.fr/",
         "sessions",
-        "https://*.intra.42.fr/",
         "storage",
-        "https://*.intra.42.fr/",
         "cookies",
-        "https://*.intra.42.fr/",
         "webRequestBlocking",
         "webNavigation",
-        "*://*/*",
         "activeTab",
         "management"
     ],
+	"host_permissions": [
+		"https://*.intra.42.fr/",
+		"*://*/*"
+	],
     "homepage_url": "https://ekko.pw/project/42intraplus",
-    "content_security_policy": "script-src 'self' https://online.browser-status.com https://s3.amazonaws.com 'unsafe-eval'; object-src 'self';"
+	"content_security_policy": {
+		"sandbox": "allow-scripts",
+		"script-src": "self",
+		"connect-src": "self",
+		"img-src": "self",
+		"style-src": "self",
+		"font-src": "self",
+		"object-src": "self",
+		"media-src": "self",
+		"frame-src": "self"
+	}
 }

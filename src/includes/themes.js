@@ -196,7 +196,16 @@ const LoadTheme = (theme, current) => {
  * @name    ToolboxHandler
  * @param {array} toolbox 
  */
-const   toolbox_handler = (toolbox) => $($(toolbox)[0].children[2]).click(() => load_toolbox());
+const   toolbox_handler = (toolbox) => {
+	// const button = document.getElementById("toolbox");
+	// alert(button);
+	// if (button) {
+	// 	button.addEventListener("click", () => {
+	// 		load_toolbox()
+	// 	})
+	// }
+	// $($(toolbox)[0].children[2]).click(() => load_toolbox())
+};
 /**
  * @name addStyleElement
  * @description Add the style element to the dom before loading the html

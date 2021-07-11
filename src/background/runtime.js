@@ -53,11 +53,9 @@ const   getStyles = (options, callback) => {
         url = "/styles/"+id+".42theme.min.css";
         storage.setItem('cssfile', chrome.runtime.getURL(url));
         fetch(chrome.runtime.getURL(url))
-        .then((response) => {
-            promises = response.text();
-            promises.then((content) => {
-                callback(filterStyles(content));
-            });
+        .then(async (response) => {
+            const content = await response.text();
+            callback(filterStyles(content));
         });
     });
 

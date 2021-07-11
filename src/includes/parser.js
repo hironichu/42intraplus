@@ -29,34 +29,8 @@ const matrix = `https://the-matrix.42lyon.fr/`;
              <label>Select a theme : </label>
              <select name="changetheme" id="themechanger">
                  <option id="opt_default" ${((theme == "default")? "disabled selected" : "")} value="default">Default</option>
-                 <option id="opt_dark" ${((theme == "dark")? "disabled selected" : "")} value="dark">Material Dark (Indev)</option>
-                 <!--<option id="opt_coal1"  disabled="disabled" value="default">{coalition_1} (Futur release)</option>
-                 <option id="opt_coal2"  disabled="disabled" value="default">{coalition_2} (Futur release)</option>
-                 <option id="opt_coal3"  disabled="disabled" value="default">{coalition_3} (Futur release)</option>-->
+                 <option id="opt_dark" ${((theme == "dark")? "disabled selected" : "")} value="dark">Dark (WIP)</option>
              </select>
-         </div>
-         <div class="tb42-privacy">
-             <label class="tb42-label-privacy">Options : </label>
-            <!-- <div class="tb42-privacy-opt" >
-              <label class="tb42-privacy-option" for="custom_name">Show Custom Names</label>
-              <input class="tb42-privacy-input" id="custom_name" type="checkbox" value="custom_name"/>
-             </div>
-             <div class="tb42-privacy-opt" >
-                <label class="tb42-privacy-option" for="custom_phrase">Show Custom phrases</label>
-                <input class="tb42-privacy-input" id="custom_phrase" type="checkbox" value="custom_phrase"/>
-             </div>
-             <div class="tb42-privacy-opt" >
-                <label class="tb42-privacy-option" for="custom_audio">Play custom audio</label>
-                <input class="tb42-privacy-input" id="custom_audio" type="checkbox" value="custom_audio"/>
-             </div>
-             <div class="tb42-privacy-opt" >
-                <label class="tb42-privacy-option" for="custom_picture">Show custom pictures</label>
-                <input class="tb42-privacy-input" id="custom_picture" type="checkbox" value="custom_picture"/>
-             </div>
-             <div class="tb42-privacy-opt" >
-                <label class="tb42-privacy-option" for="meme_phrases">Enable funny phrases</label>
-                <input class="tb42-privacy-input" id="meme_phrases" type="checkbox" value="meme_phrases"/>
-             </div>-->
          </div>
      </div>
    </div>

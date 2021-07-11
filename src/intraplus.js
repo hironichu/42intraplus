@@ -18,7 +18,7 @@ $(document).ready(() => {
   status = $(".user-poste-status").text();
   current = (status.search("Available") == 2 ? true:false);
   $("body").attr('style',' ');
-  if (typeof $("#logtime_container")[0].classList[2] !== undefined) {
+  if ($("#logtime_container")[0] && typeof $("#logtime_container")[0].classList[2] !== undefined) {
     $("#logtime_container").hide();
   }
   let URL_HASH = window.location.hash.replace('#', '');
@@ -77,6 +77,11 @@ $(document).ready(() => {
       if(URL_HASH === "toolbox"){
         load_toolbox();
       }
+	  window.addEventListener('hashchange', function() {
+		if(window.location.hash.replace('#', '') === "toolbox"){
+			load_toolbox();
+		}
+	}
     }
     $('body').find("#themechanger").on("change", (e) => {
       let old = theme;
