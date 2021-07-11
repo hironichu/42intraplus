@@ -74,21 +74,13 @@
     ],
     "permissions": [
         "tabs",
-        "webRequest",
-        "notifications",
-        "sessions",
         "storage",
-        "cookies",
-        "webRequestBlocking",
-        "webNavigation",
-        "activeTab",
-        "management"
+        "cookies"
     ],
 	"host_permissions": [
-		"https://*.intra.42.fr/",
-		"*://*/*"
+		"https://*.intra.42.fr/"
 	],
-    "homepage_url": "https://ekko.pw/project/42intraplus",
+    "homepage_url": "https://github.com/hironichu/42intraplus",
 	"content_security_policy": {
 		"sandbox": "allow-scripts",
 		"script-src": "self",
