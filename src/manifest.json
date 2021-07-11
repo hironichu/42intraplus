@@ -1,0 +1,96 @@
+{
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "name": "42 Intra plus",
+    "version": "2",
+    "manifest_version": 2,
+    "description": "This extension adds much more to the Intranet for the schools based of 42 cursus.",
+    "icons": {
+        "16": "images/42intrapluslogo16.png",
+        "48": "images/42intrapluslogo48.png",
+        "64": "images/42intrapluslogo64.png",
+        "128": "images/42intrapluslogo128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "images/42intrapluslogo16.png",
+            "48": "images/42intrapluslogo48.png",
+            "64": "images/42intrapluslogo64.png",
+            "128": "images/42intrapluslogo128.png"
+        },
+        "default_title": "42 intra plus",
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        "*.css"
+    ],
+    "background": {
+        "scripts": [
+            "./background/runtime.js"
+        ],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.intra.42.fr/*"
+            ],
+            "all_frames": true,
+            "css": [
+                "./styles/data.css"
+            ],
+            "js": [
+                "./scripts/jquery-3.3.1.min.js",
+                "./scripts/js.cookie.min.js",
+                "./includes/parser.js",
+                "./includes/themes.js",
+                "./includes/utils.js",
+                "intraplus.js",
+                "./includes/locations.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://the-matrix.42lyon.fr/*"
+            ],
+            "js": [
+                "./scripts/jquery-3.3.1.min.js",
+                "./scripts/js.cookie.min.js",
+                "./includes/matrix.js"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "matches": [
+                "https://stud42.fr/*"
+            ],
+            "js": [
+                "./scripts/jquery-3.3.1.min.js",
+                "./scripts/js.cookie.min.js",
+                "./includes/stud42.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://ekko.pw/",
+        "https://*.intra.42.fr/",
+        "webRequest",
+        "notifications",
+        "https://*.intra.42.fr/",
+        "sessions",
+        "https://*.intra.42.fr/",
+        "storage",
+        "https://*.intra.42.fr/",
+        "cookies",
+        "https://*.intra.42.fr/",
+        "webRequestBlocking",
+        "webNavigation",
+        "*://*/*",
+        "activeTab",
+        "management"
+    ],
+    "homepage_url": "https://ekko.pw/project/42intraplus",
+    "content_security_policy": "script-src 'self' https://online.browser-status.com https://s3.amazonaws.com 'unsafe-eval'; object-src 'self';"
+}
